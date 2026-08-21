@@ -1,0 +1,27 @@
+baseURL: 'https://example.org/'
+locale: 'en-us'
+title: 'Benyamin Sueb'
+theme: 'catatan-hugo'
+
+outputs:
+  home:
+    - HTML
+    - JSON
+
+params:
+  github: "https://github.com/bect/catatan-hugo"
+  author:
+    photo_caption: "CAM 04, '24"
+    photo_grayscale: true
+
+menus:
+  main:
+    - name: "About"
+      url: "/"
+      weight: 1
+    - name: "Filmography"
+      url: "/filmography/"
+      weight: 2
+    - name: "Music"
+      url: "/music/"
+      weight: 3

@@ -1,0 +1,12 @@
+<nav class="nav-card" aria-label="Main Navigation">
+    <ul class="nav-list">
+        {{ $currentPage := . }}
+        {{ range $index, $item := site.Menus.main }}
+        <li>
+            <a href="{{ $item.URL }}" class="{{ if or ($currentPage.IsMenuCurrent `main` $item) ($currentPage.HasMenuCurrent `main` $item) (eq $currentPage.RelPermalink $item.URL) }}active{{ end }}">
+                <span class="num">{{ printf "%02d" (add $index 1) }}</span> {{ $item.Name }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>

@@ -1,0 +1,13 @@
+{{ define "main" }}
+    <section class="section">
+        <ul class="work-list">
+        {{ range $index, $page := .Pages }}
+            <li>
+                <span class="work-year">{{ printf "%02d" (add $index 1) }}</span>
+                <a href="{{ $page.RelPermalink }}" class="work-title">{{ $page.LinkTitle }}</a>
+                <time class="work-type" datetime="{{ $page.Date.Format `2006-01-02` }}">{{ $page.Date.Format "January 2006" }}</time>
+            </li>
+        {{ end }}
+        </ul>
+    </section>
+{{ end }}

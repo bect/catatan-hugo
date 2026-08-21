@@ -1,0 +1,38 @@
+{{- /*
+    Find an image resource for the page context.
+*/ -}}
+{{- $imageRes := "" -}}
+
+{{- /* 1. Try front matter 'photo' parameter as page or global resource */ -}}
+{{- with .Params.photo -}}
+    {{- $imageRes = $.Resources.GetMatch . -}}
+    {{- if not $imageRes -}}
+        {{- $imageRes = resources.Get . -}}
+    {{- end -}}
+{{- else -}}
+    {{- /* 2. Fallback to the first image in the page bundle */ -}}
+    {{- with .Resources.ByType "image" | first 1 -}}
+        {{- $imageRes = index . 0 -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* 3. Fallback to Home page photo */ -}}
+{{- if not $imageRes -}}
+    {{- with site.Home.Params.photo -}}
+        {{- $imageRes = site.Home.Resources.GetMatch . -}}
+        {{- if not $imageRes -}}
+            {{- $imageRes = resources.Get . -}}
+        {{- end -}}
+    {{- else -}}
+        {{- with site.Home.Resources.ByType "image" | first 1 -}}
+            {{- $imageRes = index . 0 -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* 4. Final fallback to site config or default */ -}}
+{{- if not $imageRes -}}
+    {{- $imageRes = resources.Get (site.Params.author.photo | default "images/portrait.jpg") -}}
+{{- end -}}
+
+{{- return $imageRes -}}

@@ -1,0 +1,19 @@
+{{- /*
+    Applies image processing filters (like grayscale) to a given image resource.
+    Requires a dict with "Page" (page context) and "Image" (the image resource).
+*/ -}}
+{{- $page := .Page -}}
+{{- $imageRes := .Image -}}
+
+{{- $grayscale := site.Params.photo_grayscale | default (site.Params.author.photo_grayscale | default false) -}}
+{{- if isset $page.Params "photo_grayscale" -}}
+    {{- $grayscale = $page.Params.photo_grayscale -}}
+{{- end -}}
+
+{{- if and $imageRes $grayscale -}}
+    {{- if eq $imageRes.ResourceType "image" -}}
+        {{- $imageRes = $imageRes.Filter (images.Grayscale) -}}
+    {{- end -}}
+{{- end -}}
+
+{{- return $imageRes -}}

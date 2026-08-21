@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="search-page-container">
+    <h1 class="page-title">Archives Search</h1>
+    
+    <div id="search-results-box" class="search-results-box">
+        <p class="search-loading">Consulting the archives...</p>
+    </div>
+</div>
+
+{{ $worker := resources.Get "js/search-worker.js" | minify | fingerprint }}
+<script>
+    window.SEARCH_WORKER_URL = "{{ $worker.RelPermalink }}";
+</script>
+{{ $js := resources.Get "js/search-ui.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}

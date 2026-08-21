@@ -1,0 +1,23 @@
+<aside class="sidebar">
+    <figure class="portrait-container">
+        <div class="tape tape-left"></div>
+        <div class="tape tape-right"></div>
+        <div class="portrait">
+            {{- $imageRes := partial "get-image.html" . -}}
+            {{- $imageRes = partial "filter-image.html" (dict "Page" . "Image" $imageRes) -}}
+            
+            {{- $photoCaption := .Params.photo_caption | default (site.Params.author.photo_caption | default "Archive") -}}
+
+            {{- if $imageRes -}}
+                <img src="{{ $imageRes.RelPermalink }}" alt="Portrait of {{ site.Title }}">
+            {{- else -}}
+                <img src="{{ .Params.photo | default (site.Params.author.photo | default `images/portrait.jpg`) | relURL }}" alt="Portrait of {{ site.Title }}">
+            {{- end -}}
+            <figcaption class="portrait-caption">{{ $photoCaption }}</figcaption>
+        </div>
+    </figure>
+
+    {{ partial "menu.html" . }}
+
+    {{ partial "footer.html" . }}
+</aside>
