@@ -59,5 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
         worker.terminate();
     };
     
-    worker.postMessage({ query: query });
+    worker.postMessage({ 
+        query: query,
+        indexUrl: window.SEARCH_INDEX_URL || '/index.json'
+    });
 });

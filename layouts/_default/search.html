@@ -10,6 +10,7 @@
 {{ $worker := resources.Get "js/search-worker.js" | minify | fingerprint }}
 <script>
     window.SEARCH_WORKER_URL = "{{ $worker.RelPermalink }}";
+    window.SEARCH_INDEX_URL = "{{ `index.json` | relLangURL }}";
 </script>
 {{ $js := resources.Get "js/search-ui.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" defer></script>

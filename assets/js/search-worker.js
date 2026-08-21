@@ -1,12 +1,12 @@
 self.onmessage = async function(e) {
-    const { query } = e.data;
+    const { query, indexUrl } = e.data;
     if (!query) {
         self.postMessage({ results: [] });
         return;
     }
     
     try {
-        const response = await fetch('/index.json');
+        const response = await fetch(indexUrl || '/index.json');
         const data = await response.json();
         
         const lowerQuery = query.toLowerCase();
