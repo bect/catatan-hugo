@@ -1,7 +1,31 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+    <section class="section">
+        <h2 class="kicker">Archive: {{ .Title }}</h2>
+        {{ $paginator := .Paginate .Pages 8 }}
+        <ul class="work-list">
+        {{ range $index, $page := $paginator.Pages }}
+            <li>
+                <span class="work-year">{{ printf "%02d" (add (mul (sub $paginator.PageNumber 1) 8) (add $index 1)) }}</span>
+                <a href="{{ $page.RelPermalink }}" class="work-title">{{ $page.LinkTitle }}</a>
+                <time class="work-type" datetime="{{ $page.Date.Format `2006-01-02` }}">{{ $page.Date.Format "January 2006" }}</time>
+            </li>
+        {{ end }}
+        </ul>
+        
+        {{ if gt $paginator.TotalPages 1 }}
+        <nav class="pagination-nav">
+            <div class="pagination-prev">
+                {{ if $paginator.HasPrev }}
+                <a href="{{ $paginator.Prev.URL }}" class="pagination-link">&larr; Prev Folio</a>
+                {{ end }}
+            </div>
+            <div class="pagination-info">Folio {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</div>
+            <div class="pagination-next">
+                {{ if $paginator.HasNext }}
+                <a href="{{ $paginator.Next.URL }}" class="pagination-link">Next Folio &rarr;</a>
+                {{ end }}
+            </div>
+        </nav>
+        {{ end }}
+    </section>
 {{ end }}

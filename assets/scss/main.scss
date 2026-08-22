@@ -330,17 +330,36 @@ body {
         font-style: italic;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
+    figure {
         margin: 3rem auto;
-        padding: 8px 8px 36px 8px; /* Polaroid bottom border */
-        background: #e1d8c3; /* Aged paper color */
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3), inset 0 0 30px rgba(100, 70, 40, 0.1);
-        filter: sepia(45%) contrast(1.15) brightness(0.9) grayscale(0.15);
-        transform: rotate(-1.5deg);
+        max-width: fit-content;
+        position: relative;
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+            padding: 8px 8px 45px 8px; /* Polaroid bottom border */
+            background: #e1d8c3; /* Aged paper color */
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3), inset 0 0 30px rgba(100, 70, 40, 0.1);
+            filter: sepia(45%) contrast(1.15) brightness(0.9) grayscale(0.15);
+            transform: rotate(-1.5deg);
+        }
+
+        figcaption {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-1.5deg);
+            font-family: $font-accent;
+            font-size: 1.15rem;
+            color: rgba(43, 27, 13, 0.85);
+            text-align: center;
+            width: 90%;
+            z-index: 10;
+        }
     }
 }
 
@@ -382,6 +401,49 @@ body {
     color: $color-text-secondary;
     text-align: right;
     font-style: italic;
+}
+
+/* Pagination */
+.pagination-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(107, 90, 62, 0.5);
+    font-family: 'Special Elite', monospace;
+    font-size: 0.95rem;
+    max-width: 42rem;
+    
+    .pagination-prev, .pagination-next {
+        flex: 1;
+    }
+    
+    .pagination-next {
+        text-align: right;
+    }
+    
+    .pagination-info {
+        color: $color-text-secondary;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.85rem;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .pagination-link {
+        color: $color-accent;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: opacity 0.2s ease;
+        
+        &:hover {
+            opacity: 0.6;
+        }
+    }
 }
 
 /* Sidebar (Right) */
