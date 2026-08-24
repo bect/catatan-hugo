@@ -2,61 +2,61 @@
 
 ![Theme Screenshot](https://raw.githubusercontent.com/bect/catatan-hugo/master/images/screenshot.png)
 
-A vintage, archival Hugo theme with a gritty typewriter aesthetic and a built-in Web Worker-powered search.
+Sebuah tema Hugo bergaya arsip vintage dengan estetika mesin ketik dan fitur pencarian bawaan menggunakan Web Worker.
 
-## Features
-- Minimalist typewriter typography.
-- Fully local, client-side search (Web Worker).
-- Dynamic SVG coffee stain and ink distortion filters.
-- Responsive, single-column archival layout.
+## Fitur
+- Tipografi mesin ketik minimalis.
+- Pencarian lokal sepenuhnya di sisi klien (Web Worker).
+- Filter distorsi tinta dan noda kopi SVG dinamis.
+- Tata letak arsip satu kolom yang responsif.
 
-## Requirements
+## Persyaratan
 - Hugo Extended v0.165.0+
 
-## Installation
+## Instalasi
 
-### Method 1: Hugo Modules (Recommended)
-1. Initialize Hugo modules:
+### Metode 1: Hugo Modules (Disarankan)
+1. Inisialisasi Hugo modules:
    ```bash
-   hugo mod init github.com/your-username/your-repo
+   hugo mod init github.com/username-anda/repo-anda
    ```
-2. Add the module to your `hugo.yaml`:
+2. Tambahkan modul ke dalam `hugo.yaml` Anda:
    ```yaml
    module:
      imports:
        - path: github.com/bect/catatan-hugo
    ```
 
-### Method 2: Git Submodule
-1. Clone the theme as a submodule:
+### Metode 2: Git Submodule
+1. Kloning tema sebagai submodule:
    ```bash
    git submodule add https://github.com/bect/catatan-hugo.git themes/catatan-hugo
    ```
-2. Enable the theme in your `hugo.yaml`:
+2. Aktifkan tema di dalam `hugo.yaml` Anda:
    ```yaml
    theme: "catatan-hugo"
    ```
 
-## Configuration
+## Konfigurasi
 
-**Enable Search:**
-To make the search feature work, configure Hugo to output a JSON index for the homepage. Add this to your `hugo.yaml`:
+**Mengaktifkan Pencarian:**
+Agar fitur pencarian berfungsi, konfigurasikan Hugo untuk menghasilkan indeks JSON pada beranda (homepage). Tambahkan ini ke `hugo.yaml` Anda:
 ```yaml
 outputs:
   home: ["HTML", "JSON"]
 ```
 
-## Content Structure
+## Struktur Konten
 
-Catatan Hugo dynamically adapts to your content. You are not restricted to predefined sections. 
-Create any folder you want (e.g., `/dossier` or `/portfolio`) inside the `content/` directory. Add an `_index.md`, and the theme will instantly render the layout and resolve any images you drop into that folder.
+Catatan Hugo secara dinamis beradaptasi dengan konten Anda. Anda tidak dibatasi pada bagian-bagian (sections) yang telah ditentukan sebelumnya.
+Buat folder apa pun yang Anda inginkan (misalnya, `/dossier` atau `/portfolio`) di dalam direktori `content/`. Tambahkan `_index.md`, dan tema akan secara otomatis merender tata letak dan memuat gambar apa pun yang Anda masukkan ke dalam folder tersebut.
 
-**Homepage Highlights:**
-Add `featured: true` to the front matter of any post, and it will automatically be pulled to the front page.
+**Sorotan Beranda (Homepage Highlights):**
+Tambahkan `featured: true` ke dalam front matter di post mana pun, dan post tersebut akan secara otomatis ditarik ke halaman depan.
 
-## Running the Example Site
+## Menjalankan Situs Contoh (Example Site)
 ```bash
 cd exampleSite
 hugo server --themesDir ../..
 ```
-*(Note: The `exampleSite` directory uses placeholder images from Wikimedia Commons to demonstrate the archival aesthetic.)*
+*(Catatan: Direktori `exampleSite` menggunakan gambar placeholder dari Wikimedia Commons untuk mendemonstrasikan estetika arsip.)*

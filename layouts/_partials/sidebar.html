@@ -6,7 +6,7 @@
             {{- $imageRes := partial "get-image.html" . -}}
             {{- $imageRes = partial "filter-image.html" (dict "Page" . "Image" $imageRes) -}}
             
-            {{- $photoCaption := .Params.photo_caption | default (site.Params.author.photo_caption | default "Archive") -}}
+            {{- $photoCaption := .Params.photo_caption | default (site.Params.author.photo_caption | default (i18n "archive")) -}}
 
             {{- if $imageRes -}}
                 <img src="{{ $imageRes.RelPermalink }}" alt="Portrait of {{ site.Title }}">

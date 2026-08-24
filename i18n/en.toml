@@ -1,0 +1,44 @@
+[file_not_found]
+other = "FILE NOT FOUND"
+
+[status_redacted]
+other = "STATUS: REDACTED OR DESTROYED"
+
+[error_404_message]
+other = "The dossier you are looking for has been removed from the archives, or never existed in the first place."
+
+[return_home]
+other = "Return Home"
+
+[return_to_main_index]
+other = "Return to Main Index"
+
+[search_archives_placeholder]
+other = "Search archives..."
+
+[search]
+other = "Search"
+
+[toggle_search]
+other = "Toggle Search"
+
+[prev_folio]
+other = "Prev Folio"
+
+[next_folio]
+other = "Next Folio"
+
+[folio]
+other = "Folio"
+
+[archive]
+other = "Archive"
+
+[archives_search]
+other = "Archives Search"
+
+[biography]
+other = "01 - Biography"
+
+[selected_work]
+other = "02 - Selected Work"

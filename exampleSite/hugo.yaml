@@ -1,19 +1,32 @@
+# URL utama situs Anda
 baseURL: 'https://example.org/'
-locale: 'en-us'
-title: 'Benyamin Sueb'
-theme: 'catatan-hugo'
 
+# Pengaturan bahasa (Gunakan 'en' untuk Bahasa Inggris, 'id' untuk Bahasa Indonesia)
+languageCode: 'en'
+defaultContentLanguage: 'en'
+
+# Judul situs
+title: 'Benyamin Sueb'
+
+# Tema yang digunakan
+theme: 'bect'
+
+# Konfigurasi output wajib untuk mengaktifkan fitur pencarian (Search Web Worker)
 outputs:
   home:
     - HTML
     - JSON
 
 params:
+  # Tautan GitHub yang akan ditampilkan
   github: "https://github.com/bect/catatan-hugo"
-  author:
+  author: # default global parameter
+    # Teks yang muncul di bawah foto profil pada bilah sisi (sidebar)
     photo_caption: "CAM 04, '24"
+    # Mengubah foto profil menjadi hitam putih (grayscale) agar terlihat lebih usang
     photo_grayscale: true
 
+# Konfigurasi menu navigasi utama 
 menus:
   main:
     - name: "About"

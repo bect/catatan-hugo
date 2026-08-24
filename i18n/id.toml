@@ -1,0 +1,44 @@
+[file_not_found]
+other = "FILE TIDAK DITEMUKAN"
+
+[status_redacted]
+other = "STATUS: DIREDAKSI ATAU DIHANCURKAN"
+
+[error_404_message]
+other = "Dossier yang Anda cari telah dihapus dari arsip, atau memang tidak pernah ada."
+
+[return_home]
+other = "Kembali ke Beranda"
+
+[return_to_main_index]
+other = "Kembali ke Indeks Utama"
+
+[search_archives_placeholder]
+other = "Cari arsip..."
+
+[search]
+other = "Cari"
+
+[toggle_search]
+other = "Tampilkan Pencarian"
+
+[prev_folio]
+other = "Folio Sebelumnya"
+
+[next_folio]
+other = "Folio Berikutnya"
+
+[folio]
+other = "Folio"
+
+[archive]
+other = "Arsip"
+
+[archives_search]
+other = "Pencarian Arsip"
+
+[biography]
+other = "01 - Biografi"
+
+[selected_work]
+other = "02 - Karya Terpilih"

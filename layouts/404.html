@@ -1,11 +1,11 @@
 {{ define "main" }}
 <div class="error-404" style="text-align: center; margin-top: 10vh;">
     <h1 class="name">ERROR 404</h1>
-    <h2 class="kicker">FILE NOT FOUND</h2>
+    <h2 class="kicker">{{ i18n "file_not_found" }}</h2>
     <div class="prose" style="margin: 0 auto;">
-        <p><strong>STATUS:</strong> REDACTED OR DESTROYED</p>
-        <p>The dossier you are looking for has been removed from the archives, or never existed in the first place.</p>
-        <p style="margin-top: 3rem;"><a href="{{ site.Home.RelPermalink }}">&larr; Return to Main Index</a></p>
+        <p><strong>STATUS:</strong> {{ i18n "status_redacted" }}</p>
+        <p>{{ i18n "error_404_message" }}</p>
+        <p style="margin-top: 3rem;"><a href="{{ site.Home.RelPermalink }}">&larr; {{ i18n "return_to_main_index" }}</a></p>
     </div>
 </div>
 {{ end }}

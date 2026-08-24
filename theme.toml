@@ -1,18 +1,18 @@
 name = "Catatan Hugo"
 license = "MIT"
 licenselink = "https://github.com/bect/catatan-hugo/blob/master/LICENSE"
-description = "Catatan Hugo is a vintage, gritty, archival Hugo theme inspired by typewriters, coffee stains, and 1970s dossiers. Features a dedicated Web Worker-powered search and minimalist typography."
+description = "Catatan Hugo adalah tema Hugo yang mengusung gaya arsip klasik, kasar, dan vintage, terinspirasi oleh mesin tik, noda kopi, dan dokumen arsip tahun 1970-an. Memiliki fitur pencarian khusus menggunakan Web Worker dan tipografi minimalis."
 
-# The home page of the theme, where the source can be found.
+# Halaman utama tema, di mana kode sumber dapat ditemukan.
 homepage = "https://github.com/bect/catatan-hugo"
 
-# If you have a running demo of the theme.
+# Jika Anda memiliki demo yang berjalan untuk tema ini.
 demosite = "https://bect.github.io/catatan-hugo/"
 
 tags = ["blog", "portfolio", "minimalist", "vintage", "typewriter", "dossier", "archive"]
 features = ["search", "responsive", "dark mode"]
 
-# If the theme has a single author
+# Jika tema memiliki satu penulis
 [author]
     name = "bect"
     homepage = "https://github.com/bect"

@@ -1,6 +1,6 @@
 {{ define "main" }}
     <section class="section">
-        <h2 class="kicker">Archive: {{ .Title }}</h2>
+        <h2 class="kicker">{{ i18n "archive" }}: {{ .Title }}</h2>
         {{ $paginator := .Paginate .Pages 8 }}
         <ul class="work-list">
         {{ range $index, $page := $paginator.Pages }}
@@ -16,13 +16,13 @@
         <nav class="pagination-nav">
             <div class="pagination-prev">
                 {{ if $paginator.HasPrev }}
-                <a href="{{ $paginator.Prev.URL }}" class="pagination-link">&larr; Prev Folio</a>
+                <a href="{{ $paginator.Prev.URL }}" class="pagination-link">&larr; {{ i18n "prev_folio" }}</a>
                 {{ end }}
             </div>
-            <div class="pagination-info">Folio {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</div>
+            <div class="pagination-info">{{ i18n "folio" }} {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</div>
             <div class="pagination-next">
                 {{ if $paginator.HasNext }}
-                <a href="{{ $paginator.Next.URL }}" class="pagination-link">Next Folio &rarr;</a>
+                <a href="{{ $paginator.Next.URL }}" class="pagination-link">{{ i18n "next_folio" }} &rarr;</a>
                 {{ end }}
             </div>
         </nav>
