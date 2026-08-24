@@ -42,3 +42,6 @@ other = "01 - Biography"
 
 [selected_work]
 other = "02 - Selected Work"
+
+[about]
+other = "About"
