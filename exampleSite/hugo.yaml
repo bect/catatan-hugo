@@ -1,15 +1,15 @@
 # URL utama situs Anda
 baseURL: 'https://example.org/'
 
-# Pengaturan bahasa (Gunakan 'en' untuk Bahasa Inggris, 'id' untuk Bahasa Indonesia)
-languageCode: 'en'
+# Pengaturan bahasa (Mendukung tag regional seperti 'en-us' dan 'id-id', atau cukup 'en' dan 'id')
+locale: 'en'
 defaultContentLanguage: 'en'
 
 # Judul situs
 title: 'Benyamin Sueb'
 
 # Tema yang digunakan
-theme: 'bect'
+theme: 'catatan-hugo'
 
 # Konfigurasi output wajib untuk mengaktifkan fitur pencarian (Search Web Worker)
 outputs:
