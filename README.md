@@ -1,5 +1,7 @@
 # Catatan Hugo
 
+![Theme Screenshot](https://raw.githubusercontent.com/bect/catatan-hugo/master/images/screenshot.png)
+
 A vintage, archival Hugo theme with a gritty typewriter aesthetic and a built-in Web Worker-powered search.
 
 ## Features
